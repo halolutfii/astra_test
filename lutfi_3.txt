@@ -1,0 +1,22 @@
+function find(names, query) {
+    const storage = [];
+
+    for (const q of query) {
+        let count = 0; 
+
+        for (const name of names) {
+            if (name.startsWith(q) && q.length < name.length) {
+                count++;
+            }
+        }
+
+        storage.push(count);
+    }
+
+    return storage; 
+}
+
+const names = ['jackson', 'jacques', 'jack'];
+const query = ['jack'];
+const storage = find(names, query);
+console.log(storage); 

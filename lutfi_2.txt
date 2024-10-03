@@ -1,0 +1,17 @@
+function cariUrutanAngka(arah) {
+    const n = arah.length;
+    const hasil = [];  
+
+    for (let i = 0; i < n; i++) {
+        if (arah[i] === 'L') {
+            hasil.unshift(i + 1); 
+        } else {
+            hasil.push(i + 1);  
+        }
+    }
+
+    return hasil;  
+}
+
+const arah = "LRRLLL";
+console.log(cariUrutanAngka(arah));  

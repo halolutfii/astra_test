@@ -1,0 +1,20 @@
+function deleteSubstring(x) {
+    const storage = {};
+    
+    for (const char of x) {
+        storage[char] = (storage[char] || 0) + 1;
+    }
+    
+    let deletion = 0;
+    
+    for (const char in storage) {
+        if (storage[char] > 1) {
+            deletion += storage[char] - 1; 
+        }
+    }
+    
+    return deletion;
+}
+
+const x = "abab";
+console.log(deleteSubstring(x)); 
